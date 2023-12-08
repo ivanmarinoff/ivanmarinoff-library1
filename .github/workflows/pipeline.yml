@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ "main" ]
 
+  workflow_dispatch:
+
 jobs:
   build:
 
@@ -18,4 +20,12 @@ jobs:
       with:
         node-version: 18.x
         cache: 'npm'
-   
+
+    - name: Build the app
+      run: npm install
+
+    - name: Run integration tests
+      run: npm run test:unit
+    
+    - name: Display "ivanmarinoff"
+      run: echo "ivanmarinoff"
