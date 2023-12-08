@@ -54,5 +54,8 @@ jobs:
     - name: Build the app
       run: npm install
 
+    - name: Install depemdencies
+      run: npx playwright install
+
     - name: Run UI tests
       run: npm run test:ui
